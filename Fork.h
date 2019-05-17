@@ -8,16 +8,17 @@
 
 class Fork {
 private:
-    int fork_id;
-    std::mutex mutex;
+	int fork_id;
 
-    Screen_Printer &printer;
+	Screen_Printer &printer;
 public:
-    Fork(int fork_id, Screen_Printer &printer);
+	std::mutex mutex;
 
-    void get_fork(int philosopher_id);
+	Fork(int fork_id, Screen_Printer &printer);
 
-    void put_off_fork();
+	void get_fork(int philosopher_id);
+
+	void put_off_fork();
 };
 
 

@@ -3,6 +3,7 @@
 
 
 #include <atomic>
+#include <vector>
 #include "Fork.h"
 #include "Philosopher.h"
 #include "Screen_Printer.h"
@@ -11,23 +12,23 @@ class Philosopher;
 
 class Table {
 private:
-    int philosophers_amount;
-    std::atomic<bool> feast;
+	int philosophers_amount;
+	std::atomic<bool> feast;
 
-    Screen_Printer &printer;
+	Screen_Printer &printer;
 
-    Philosopher **philosophers;
-    Fork **forks;
+	std::vector<Philosopher *> philosophers;
+	std::vector<Fork *> forks;
 public:
-    Table(int philosophers_amount, Screen_Printer &printer);
+	Table(int philosophers_amount, Screen_Printer &printer);
 
-    ~Table();
+	~Table();
 
-    void start_feast();
+	void start_feast();
 
-    inline bool is_feast() { return feast; }
+	inline bool is_feast() { return feast; }
 
-    void stop_feast();
+	void stop_feast();
 };
 
 

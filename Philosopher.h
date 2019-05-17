@@ -12,36 +12,36 @@ class Table;
 
 class Philosopher {
 private:
-    std::default_random_engine engine;
-    std::uniform_int_distribution<int> rand_gen;
+	std::default_random_engine engine;
+	std::uniform_int_distribution<int> rand_gen;
 
-    int philosopher_id;
-    int eating_counter;
+	int philosopher_id;
+	int eating_counter;
 
-    Table &table;
-    Fork &left;
-    Fork &right;
+	Table &table;
+	Fork &left;
+	Fork &right;
 
-    std::thread philosopher_thread;
+	std::thread philosopher_thread;
 
-    Screen_Printer &printer;
+	Screen_Printer &printer;
 
-    void think();
+	void think();
 
-    void take_fork(Fork &fork);
+	void take_fork(Fork &fork);
 
-    void eat();
+	void eat();
 
-    void put_off_fork(Fork &fork);
+	static void put_off_fork(Fork &fork);
 
-    void increment_eating_counter();
+	void increment_eating_counter();
 
 public:
-    Philosopher(int philosopher_id, Table &table, Fork &left, Fork &right, Screen_Printer &printer);
+	Philosopher(int philosopher_id, Table &table, Fork &left, Fork &right, Screen_Printer &printer);
 
-    void dine();
+	void dine();
 
-    void join();
+	void join();
 };
 
 

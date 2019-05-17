@@ -10,14 +10,14 @@ using namespace std;
 const int philosophers_amount = 10;
 
 int main() {
-    Screen_Printer printer(philosophers_amount);
-    Table table(philosophers_amount, printer);
+	Screen_Printer printer(philosophers_amount);
+	Table table(philosophers_amount, printer);
 
-    table.start_feast();
+	table.start_feast();
 
-    printer.close_program();
+	printer.close_program();
 
-    table.stop_feast();
+	table.stop_feast();
 
-    return 0;
+	return 0;
 }
