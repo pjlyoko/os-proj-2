@@ -11,11 +11,12 @@ private:
     int fork_id;
     std::mutex mutex;
 
-    Screen_Printer& printer;
+    Screen_Printer &printer;
 public:
-    Fork(int fork_id, Screen_Printer& printer);
+    Fork(int fork_id, Screen_Printer &printer);
 
     void get_fork(int philosopher_id);
+
     void put_off_fork();
 };
 

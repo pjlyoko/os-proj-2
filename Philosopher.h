@@ -9,6 +9,7 @@
 #include "Screen_Printer.h"
 
 class Table;
+
 class Philosopher {
 private:
     std::default_random_engine engine;
@@ -17,23 +18,29 @@ private:
     int philosopher_id;
     int eating_counter;
 
-    Table& table;
-    Fork& left;
-    Fork& right;
+    Table &table;
+    Fork &left;
+    Fork &right;
 
     std::thread philosopher_thread;
 
-    Screen_Printer& printer;
+    Screen_Printer &printer;
 
     void think();
-    void take_fork(Fork& fork);
+
+    void take_fork(Fork &fork);
+
     void eat();
-    void put_off_fork(Fork& fork);
+
+    void put_off_fork(Fork &fork);
+
     void increment_eating_counter();
+
 public:
-    Philosopher(int philosopher_id, Table& table, Fork& left, Fork &right, Screen_Printer& printer);
+    Philosopher(int philosopher_id, Table &table, Fork &left, Fork &right, Screen_Printer &printer);
 
     void dine();
+
     void join();
 };
 
